@@ -13,11 +13,19 @@ public class HomePageMainScooter {
         this.driver = driver;
     }
 
+    //локатор для кнопки принятия куки
+    private By acceptCookieButton = By.className("App_CookieButton__3cvqF");
+
     //локатор для кнопки "Заказать" в основной части
     private By orderButtonInMain = By.xpath(".//div[@class='Home_RoadMap__2tal_']/div[5]/button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
 
     //локатор для кнопки "Заказать" в хэдере
     private By orderButtonInHeader = By.xpath(".//div[@class='Header_Nav__AGCXC']/button[@class='Button_Button__ra12g']");
+
+    //метод принимает куки
+    public void clickToAcceptCookie() {
+        driver.findElement(acceptCookieButton).click();
+    }
 
     //метод кликает по кнопке "Заказать" в основной части
     public void clickToOrderButtonInMain() {
